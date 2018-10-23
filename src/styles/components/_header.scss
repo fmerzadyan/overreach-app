@@ -1,9 +1,30 @@
-.header__title{
+.header {
+    background-color: $void;
+    max-width: 100rem;
+    margin: 0 auto;
+    padding: $xxl-size;
+}
+
+.header__title {
+    border-bottom: 1px solid $fuscia;
     color: $fuscia;
-    text-transform: uppercase;
+    font-family: 'SpaceMono', sans-serif;
+    font-size: $xxl-size;
+    font-style: normal;
+    font-weight: 800;
+    letter-spacing: $m-size;
+    overflow-wrap: break-word;
+    padding-bottom: $m-size;
+    text-align: center;
 }
 
 .header__tagline {
     color: $jewel;
-    text-transform: uppercase;
+    font-family: 'SpaceMono', sans-serif;
+    font-size: $l-size;
+    font-style: italic;
+    font-weight: 600;
+    letter-spacing: $s-size;
+    overflow-wrap: break-word;
+    text-align: center;
 }

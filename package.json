@@ -4,7 +4,7 @@
     "description": "A web app that consumes twitter API for opinion mining purposes based on geolocation.",
     "main": "index.js",
     "scripts": {
-        "dev": "parcel src/index.html",
+        "dev": "parcel src/index.html --no-cache",
         "build": "parcel build src/index.html --no-cache --out-dir dist"
     },
     "author": "fmerzadyan",

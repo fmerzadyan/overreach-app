@@ -3,7 +3,10 @@ html {
 }
 
 body {
-    background: $void;
-    font-family: Inconsolata, Arial, sans-serif;
+    background: $stark;
     font-size: $m-size;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-transform: uppercase;
 }

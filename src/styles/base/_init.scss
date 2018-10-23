@@ -1,4 +1,16 @@
 /*
+    Fonts
+*/
+@font-face {
+    font-family: SpaceMono;
+    src:
+        url('../assets/fonts/spacemono/SpaceMono-Bold.ttf') format('ttf'),
+        url('../assets/fonts/spacemono/SpaceMono-BoldItalic.ttf') format('ttf'),
+        url('../assets/fonts/spacemono/SpaceMono-Italic.ttf') format('ttf'),
+        url('../assets/fonts/spacemono/SpaceMono-Regular.ttf') format('ttf');
+}
+
+/*
     Colours
 */
 $void: #0E0B16;
@@ -13,3 +25,4 @@ $s-size: 1.2rem;
 $m-size: 1.6rem;
 $l-size: 3.2rem;
 $xl-size: 4.8rem;
+$xxl-size: 6.4rem;
