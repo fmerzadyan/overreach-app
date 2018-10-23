@@ -4,7 +4,7 @@ import WorldMap from './WorldMap';
 
 const OverreachApp = () => {
     return (
-        <div>
+        <div className="container">
             <Header />
             <WorldMap />
         </div>
