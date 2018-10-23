@@ -42,8 +42,8 @@ export default class WorldMap extends React.Component {
             .range(['#FFF176', '#FFC107', '#E65100']);
         return (
             <div>
-                <button onClick={this.handleZoomIn}>{'Zoom in'}</button>
-                <button onClick={this.handleZoomOut}>{'Zoom out'}</button>
+                <button onClick={this.handleZoomIn}>{'-'}</button>
+                <button onClick={this.handleZoomOut}>{'+'}</button>
                 <hr />
                 <ComposableMap style={{ width: '100%' }}>
                     <ZoomableGroup

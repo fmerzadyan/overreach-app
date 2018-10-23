@@ -10,3 +10,24 @@ body {
 h1, h2, h3, h4, h5, h6 {
     text-transform: uppercase;
 }
+
+button {
+    background-color: $void;
+    border: 0px solid $void;
+    border-radius: $xs-size;
+    color: $fuscia;
+    font-size: $s-size;
+    font-family: 'SpaceMono', sans-serif;
+    font-weight: bold;
+    margin: $xxl-size $xs-size 0 $xs-size;
+    padding: $m-size;
+    width: $xl-size;
+}
+
+button:hover {
+    background-color: lighten($void, 10%);
+}
+
+button:active {
+    background-color: lighten($void, 30%);
+}
