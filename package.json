@@ -1,0 +1,26 @@
+{
+    "name": "overreach-app",
+    "version": "1.0.0",
+    "description": "A web app that consumes twitter API for opinion mining purposes based on geolocation.",
+    "main": "index.js",
+    "scripts": {
+        "dev": "parcel src/index.html",
+        "build": "parcel build src/index.html --no-cache --out-dir dist"
+    },
+    "author": "fmerzadyan",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/fmerzadyan/overreach-app"
+    },
+    "license": "MIT",
+    "dependencies": {
+        "@babel/plugin-proposal-class-properties": "^7.1.0",
+        "parcel-bundler": "^1.10.3",
+        "react": "^16.5.2",
+        "react-dom": "^16.5.2"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.1.2",
+        "sass": "^1.14.3"
+    }
+}
