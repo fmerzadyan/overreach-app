@@ -12,11 +12,18 @@ import geoJsonObject from '../../assets/maps/world-50m-simplified.json';
 
 export default class WorldMap extends React.Component {
     state = {
-        zoom: 1,
+        zoom: 2,
+        defaultCentre: [0, 52],
         markers: [
+            [-118.2, 34.1], // Los Angeles
             [-73.9, 40.7], // New York
             [0, 52], // London
-            [114, 22.2] // Hong Kong
+            [13.4, 52.5], // Berlin
+            [31.3, 30.0], // Cairo
+            [37.6, 55.8], // Moscow
+            [114, 22.2], // Hong Kong
+            [139.7, 35.7], // Tokyo
+            [103.8, 1.35] // Singapore
         ]
     };
     handleZoomIn = () => {
@@ -83,7 +90,7 @@ export default class WorldMap extends React.Component {
                                             fill: colorScale(geography.properties.pop_est),
                                             stroke: '#FFF',
                                             strokeWidth: 0.5,
-                                            outline: 'none',
+                                            outline: 'red',
                                         },
                                     }}
                                 />
