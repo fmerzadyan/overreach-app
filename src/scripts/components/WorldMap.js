@@ -12,10 +12,12 @@ import geoJsonObject from '../../assets/maps/world-50m-simplified.json';
 
 export default class WorldMap extends React.Component {
     state = {
-        zoom: 2,
-        defaultCentre: [6.15, 47.3],
-        currentCentre: [], // TODO
-        markers: [] // TODO
+        zoom: 1,
+        markers: [
+            [-73.9, 40.7], // New York
+            [0, 52], // London
+            [114, 22.2] // Hong Kong
+        ]
     };
     handleZoomIn = () => {
         this.setState(() => ({
@@ -30,11 +32,28 @@ export default class WorldMap extends React.Component {
     handleMarkerClick = (marker, e) => {
         console.log(marker);
     };
-    handleMoveStart = (currentCentre = this.state.defaultCentre) => {
-        console.log(currentCentre); // TODO
-    };
-    handleMoveEnd = (newCentre) => {
-        console.log(newCentre); // TODO
+    renderMarkers = () => {
+        if (this.state.markers.length > 0) {
+            let jsxCollection = [];
+            this.state.markers.forEach((marker, index) => {
+                let jsxElement = (
+                    <Marker
+                        key={index}
+                        marker={{ coordinates: marker }}
+                        style={{
+                            default: { fill: 'yellow' },
+                            hover: { fill: 'orange' },
+                            pressed: { fill: 'red' }
+                        }}
+                        onClick={this.handleMarkerClick}
+                    >
+                        <circle cx={0} cy={0} r={5} />
+                    </Marker>
+                );
+                jsxCollection.push(jsxElement);
+            });
+            return jsxCollection;
+        }
     };
     render() {
         const colorScale = scaleLinear()
@@ -71,17 +90,7 @@ export default class WorldMap extends React.Component {
                             ))}
                         </Geographies>
                         <Markers>
-                            <Marker
-                                marker={{ coordinates: [8.5, 47.3] }}
-                                style={{
-                                    default: { fill: 'yellow' },
-                                    hover: { fill: 'orange' },
-                                    pressed: { fill: 'red' }
-                                }}
-                                onClick={this.handleMarkerClick}
-                            >
-                                <circle cx={0} cy={0} r={5} />
-                            </Marker>
+                            {this.renderMarkers()}
                         </Markers>
                     </ZoomableGroup>
                 </ComposableMap>
