@@ -10,21 +10,26 @@ import Markers from 'react-simple-maps/lib/Markers';
 import { scaleLinear } from 'd3-scale';
 import geoJsonObject from '../../assets/maps/world-50m-simplified.json';
 
+const getLocationsCoordsMap = () => {
+    const locations = [
+        ['los angeles', [-118.2, 34.1]],
+        ['new york', [-73.9, 40.7]],
+        ['london', [0, 52]],
+        ['berlin', [13.4, 52.5]],
+        ['cairo', [31.3, 30.0]],
+        ['moscow', [37.6, 55.8]],
+        ['hong kong', [114, 22.2]],
+        ['tokyo', [139.7, 35.7]],
+        ['singapore', [103.8, 1.35]]
+    ];
+    return new Map(locations);
+};
+
 export default class WorldMap extends React.Component {
     state = {
-        zoom: 2,
-        defaultCentre: [0, 52],
-        markers: [
-            [-118.2, 34.1], // Los Angeles
-            [-73.9, 40.7], // New York
-            [0, 52], // London
-            [13.4, 52.5], // Berlin
-            [31.3, 30.0], // Cairo
-            [37.6, 55.8], // Moscow
-            [114, 22.2], // Hong Kong
-            [139.7, 35.7], // Tokyo
-            [103.8, 1.35] // Singapore
-        ]
+        zoom: 3,
+        defaultCentre: getLocationsCoordsMap().get('london'),
+        map: getLocationsCoordsMap()
     };
     handleZoomIn = () => {
         this.setState(() => ({
@@ -36,17 +41,24 @@ export default class WorldMap extends React.Component {
             zoom: this.state.zoom / 2
         }));
     };
-    handleMarkerClick = (marker, e) => {
-        console.log(marker);
+    handleMarkerClick = ({coordinates}) => {
+        for (const entry of getLocationsCoordsMap().entries()) {
+             // Match city with coordinates.
+            if (entry[1][0] === coordinates[0] && entry[1][1] === coordinates[1]) {
+                // TODO: query Twitter API for this geolocation.
+                console.log(entry[0]);
+            }
+        }
     };
     renderMarkers = () => {
-        if (this.state.markers.length > 0) {
+        if (this.state.map) {
             let jsxCollection = [];
-            this.state.markers.forEach((marker, index) => {
+            // arguments for forEach: (value, key).
+            this.state.map.forEach((value, key) => {
                 let jsxElement = (
                     <Marker
-                        key={index}
-                        marker={{ coordinates: marker }}
+                        key={key}
+                        marker={{ coordinates: value }}
                         style={{
                             default: { fill: 'yellow' },
                             hover: { fill: 'orange' },
@@ -88,10 +100,12 @@ export default class WorldMap extends React.Component {
                                     style={{
                                         default: {
                                             fill: colorScale(geography.properties.pop_est),
-                                            stroke: '#FFF',
-                                            strokeWidth: 0.5,
-                                            outline: 'red',
+                                            stroke: '#A239CA',
+                                            strokeWidth: 0.3,
+                                            outline: 'none',
                                         },
+                                        hover:   { fill: '#A239CA'},
+                                        pressed: { fill: '#4717F6' },
                                     }}
                                 />
                             ))}
