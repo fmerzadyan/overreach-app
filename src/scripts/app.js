@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import OverreachApp from './components/OverreachApp';
+import AppRouter from './routers/AppRouter';
 import 'normalize.css/normalize.css';
 import '../styles/app.scss';
 
-ReactDOM.render(<OverreachApp />, document.getElementById('app'));
+ReactDOM.render(<AppRouter />, document.getElementById('app'));

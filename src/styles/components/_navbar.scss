@@ -1,0 +1,20 @@
+.navbar {
+    display: flex;
+    text-align: center;
+}
+
+.navbar__link {
+    background-color: $void;
+    border-radius: $xs-size;
+    color: $yellow;
+    font-family: "SpaceMono", sans-serif;
+    letter-spacing: $xs-size;
+    margin: 0 $s-size;
+    padding: 0 $xs-size;
+    width: 10rem;
+    text-decoration: none;
+}
+
+.is-active {
+    background-color: $stark;
+}

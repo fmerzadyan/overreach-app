@@ -1,14 +1,12 @@
 import React from 'react';
-import Header from './Header';
 import WorldMap from './WorldMap';
 
-const OverreachApp = () => {
+const HomePage = () => {
     return (
         <div className="container">
-            <Header />
             <WorldMap />
         </div>
     );
 };
 
-export default OverreachApp;
+export default HomePage;

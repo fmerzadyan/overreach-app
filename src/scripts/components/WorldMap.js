@@ -60,13 +60,13 @@ export default class WorldMap extends React.Component {
                         key={key}
                         marker={{ coordinates: value }}
                         style={{
-                            default: { fill: 'yellow' },
-                            hover: { fill: 'orange' },
-                            pressed: { fill: 'red' }
+                            default: { fill: '#CCFF15' },
+                            hover: { fill: '#CCFF15' },
+                            pressed: { fill: '#A239CA' }
                         }}
                         onClick={this.handleMarkerClick}
                     >
-                        <circle cx={0} cy={0} r={5} />
+                        <circle cx={0} cy={0} r={10} />
                     </Marker>
                 );
                 jsxCollection.push(jsxElement);
