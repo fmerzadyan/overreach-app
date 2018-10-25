@@ -20,13 +20,10 @@ const Footer = () => {
     const title = 'Overreach';
     const size = 64;
     const round = true;
-    const footerMessage = 'Author: F.Merzadyan. License: MIT.';
-    const githubDescription='Link to GitHub repository';
-    const githubUrl = 'https://github.com/fmerzadyan/overreach-app';
-    // <h4>{footerMessage} <a href={githubUrl}>{githubDescription}</a></h4>
+    const repoUrl = 'https://github.com/fmerzadyan/overreach-app';
 
     return (
-        <div className='container'>
+        <div className='container' id='footer__container'>
             <div className='social__buttons'>
                 <FacebookShareButton
                     className='social__button'
@@ -78,6 +75,7 @@ const Footer = () => {
                 </EmailShareButton>
             </div>
             <div className='footer__message'>
+                <p>MIT Open Source License. Visit <a href={repoUrl}>GitHub</a> for more information.</p>
             </div>
         </div>
     );

@@ -15,3 +15,18 @@
     text-decoration: none;
     text-transform: none;
 }
+
+#footer__container {
+    background-color: $void;
+}
+
+#footer__container p {
+    color: $stark;
+    font-family: 'SpaceMono', sans-serif;
+    text-align: center;
+    text-decoration: none;
+}
+
+#footer__container a {
+    color: $fuscia;
+}
