@@ -23,6 +23,7 @@ const Footer = () => {
     const footerMessage = 'Author: F.Merzadyan. License: MIT.';
     const githubDescription='Link to GitHub repository';
     const githubUrl = 'https://github.com/fmerzadyan/overreach-app';
+    // <h4>{footerMessage} <a href={githubUrl}>{githubDescription}</a></h4>
 
     return (
         <div className='container'>
@@ -77,7 +78,6 @@ const Footer = () => {
                 </EmailShareButton>
             </div>
             <div className='footer__message'>
-                <h4>{footerMessage} <a href={githubUrl}>{githubDescription}</a></h4>
             </div>
         </div>
     );
