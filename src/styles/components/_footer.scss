@@ -1,0 +1,17 @@
+.social__buttons {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.social__buttons .social__button {
+    margin: $m-size;
+}
+
+.footer__message h4, a {
+    font-family: 'SpaceMono', sans-serif;
+    font-weight: 400;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+}

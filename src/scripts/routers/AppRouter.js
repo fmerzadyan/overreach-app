@@ -5,6 +5,7 @@ import HomePage from '../components/HomePage';
 import QueryPage from '../components/QueryPage';
 import AboutPage from '../components/AboutPage';
 import NotFoundPage from '../components/NotFoundPage';
+import Footer from '../components/Footer';
 
 const AppRouter = () => (
     <BrowserRouter>
@@ -16,6 +17,7 @@ const AppRouter = () => (
                 <Route path="/about" component={AboutPage} />
                 <Route component={NotFoundPage} />
             </Switch>
+            <Footer />
         </div>
     </BrowserRouter>
 );
