@@ -75,7 +75,7 @@ const Footer = () => {
                 </EmailShareButton>
             </div>
             <div className='footer__message'>
-                <p>MIT Open Source License. Visit <a href={repoUrl}>GitHub</a> for more information.</p>
+                
             </div>
         </div>
     );
